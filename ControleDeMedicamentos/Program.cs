@@ -1,4 +1,5 @@
 using ControleDeMedicamentos.Infraestrutura.Arquivos.Compartilhado;
+using ControleDeMedicamentos.Infraestrutura.Arquivos.ModuloFornecedor;
 using ControleDeMedicamentos.Infraestrutura.Arquivos.ModuloFuncionario;
 using Serilog;
 using Serilog.Events;
@@ -13,7 +14,8 @@ public class Program
 
         // Inje��o de depend�ncias criadas por n�s
         builder.Services.AddScoped((_) => new ContextoDados(true));
-        builder.Services.AddScoped<RepositorioFuncionarioEmArquivo>();          // Injeta uma inst�ncia do servi�o por requisi��o (a��o) HTTP, essa inst�ncia acompanha a requisi��o do cliente
+        builder.Services.AddScoped<RepositorioFuncionarioEmArquivo>();
+        builder.Services.AddScoped<RepositorioFornecedorEmArquivo>();          // Injeta uma inst�ncia do servi�o por requisi��o (a��o) HTTP, essa inst�ncia acompanha a requisi��o do cliente
 
         var caminhoAppData = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
