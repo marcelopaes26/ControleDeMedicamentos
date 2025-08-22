@@ -1,7 +1,7 @@
 using ControleDeMedicamentos.Dominio.ModuloFuncionario;
 using System.ComponentModel.DataAnnotations;
 
-namespace ControleDeMedicamentos.WebApp.Models;
+namespace ControleDeMedicamentos.Models;
 
 public class CadastrarFuncionarioViewModel
 {
