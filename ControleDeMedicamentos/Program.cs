@@ -19,8 +19,8 @@ public class Program
         builder.Services.AddScoped<RepositorioMedicamentoEmArquivo>();
         builder.Services.AddScoped<RepositorioFornecedorEmArquivo>();
         builder.Services.AddScoped<RepositorioFuncionarioEmArquivo>();
-        
-        SerilogConfig.AddSerilogConfig(builder.Services, builder.Logging, builder.Configuration);
+
+        builder.Services.AddSerilogConfig(builder.Logging, builder.Configuration);
 
         // Inje��o de depend�ncias da Microsoft.
         builder.Services.AddControllersWithViews();
