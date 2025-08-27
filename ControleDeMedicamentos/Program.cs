@@ -2,11 +2,12 @@ using ControleDeMedicamentos.Infraestrutura.Arquivos.Compartilhado;
 using ControleDeMedicamentos.Infraestrutura.Arquivos.ModuloFornecedor;
 using ControleDeMedicamentos.Infraestrutura.Arquivos.ModuloFuncionario;
 using ControleDeMedicamentos.Infraestrutura.Arquivos.ModuloMedicamento;
+using ControleDeMedicamentos.Infraestrutura.Arquivos.ModuloPaciente;
 using ControleDeMedicamentos.DependencyInjection;
 using Serilog;
 using Serilog.Events;
 
-namespace ControleDeMedicamentos;
+namespace ControleDeMedicamentos.WebApp;
 
 public class Program
 {
@@ -15,10 +16,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Inje��o de depend�ncias criadas por n�s
-        builder.Services.AddScoped((_) => new ContextoDados(true));
-        builder.Services.AddScoped<RepositorioMedicamentoEmArquivo>();
-        builder.Services.AddScoped<RepositorioFornecedorEmArquivo>();
-        builder.Services.AddScoped<RepositorioFuncionarioEmArquivo>();
+        builder.Services.AddCamadaInfraestrutura();
 
         builder.Services.AddSerilogConfig(builder.Logging, builder.Configuration);
 
@@ -40,4 +38,5 @@ public class Program
 
         app.Run();
     }
+
 }
