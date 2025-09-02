@@ -1,6 +1,6 @@
 using ControleDeMedicamentos.DependencyInjection;
 
-namespace ControleDeMedicamentos.WebApp;
+namespace ControleDeMedicamentos;
 
 public class Program
 {
