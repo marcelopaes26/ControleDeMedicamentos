@@ -1,6 +1,6 @@
 using ControleDeMedicamentos.DependencyInjection;
 
-namespace ControleDeMedicamentos;
+namespace ControleDeMedicamentos.WebApp;
 
 public class Program
 {
@@ -18,6 +18,16 @@ public class Program
 
         var app = builder.Build();
 
+        // Middleware - Fun��es que executam durante cada requisi��o e resposta HTTP
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseDeveloperExceptionPage();
+        }
+        else
+        {
+            app.UseExceptionHandler("/Home/Error");
+        }
+
         app.UseHttpsRedirection();
         app.UseStaticFiles();
 
@@ -31,5 +41,4 @@ public class Program
 
         app.Run();
     }
-
 }
