@@ -1,4 +1,5 @@
 using ControleDeMedicamentos.DependencyInjection;
+using ControleDeMedicamentos.WebApp.DependencyInjection;
 
 namespace ControleDeMedicamentos;
 
@@ -9,7 +10,7 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         // Inje��o de depend�ncias criadas por n�s
-        builder.Services.AddCamadaInfraestrutura();
+        builder.Services.AddCamadaInfraestrutura(builder.Configuration);
 
         builder.Services.AddSerilogConfig(builder.Logging, builder.Configuration);
 
