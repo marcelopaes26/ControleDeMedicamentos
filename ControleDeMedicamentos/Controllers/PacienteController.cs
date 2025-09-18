@@ -1,10 +1,9 @@
 using ControleDeMedicamentos.Dominio.ModuloPaciente;
-using ControleDeMedicamentos.Infraestrutura.Arquivos.ModuloPaciente;
 using ControleDeMedicamentos.Infraestrutura.SqlServer.ModuloPaciente;
 using ControleDeMedicamentos.Models;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ControleDeMedicamentos.WebApp.Controllers;
+namespace ControleDeMedicamentos.Controllers;
 
 public class PacienteController : Controller
 {

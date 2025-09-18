@@ -1,4 +1,3 @@
-using ControleDeMedicamentos.Dominio.ModuloPrescricao;
 using ControleDeMedicamentos.Dominio.ModuloRequisicaoMedicamento;
 using ControleDeMedicamentos.Infraestrutura.Arquivos.ModuloFuncionario;
 using ControleDeMedicamentos.Infraestrutura.Arquivos.ModuloMedicamento;
