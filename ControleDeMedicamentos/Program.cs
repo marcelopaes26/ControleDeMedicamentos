@@ -1,5 +1,4 @@
 using ControleDeMedicamentos.DependencyInjection;
-using ControleDeMedicamentos.WebApp.DependencyInjection;
 
 namespace ControleDeMedicamentos;
 
